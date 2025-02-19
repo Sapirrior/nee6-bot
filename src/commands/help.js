@@ -1,4 +1,4 @@
-const modCmds = '`Coming Soon`';
+const modCmds = '`kick`';
 const utilityCmds = '`help ship prefix meme`';
 
 module.exports = {
