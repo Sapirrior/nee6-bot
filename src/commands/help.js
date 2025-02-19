@@ -1,5 +1,5 @@
 const modCmds = '`Coming Soon`';
-const utilityCmds = '`help ship prefix`';
+const utilityCmds = '`help ship prefix meme`';
 
 module.exports = {
   name: 'help',
