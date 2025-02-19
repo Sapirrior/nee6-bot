@@ -1,5 +1,5 @@
 const modCmds = '`Coming Soon`';
-const utilityCmds = '`help`';
+const utilityCmds = '`help ship`';
 
 module.exports = {
   name: 'help',
