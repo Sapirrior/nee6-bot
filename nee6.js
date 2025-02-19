@@ -22,4 +22,4 @@ client.on(Events.InteractionCreate, async i => {
   i.reply({embeds: [embed]});
 });
 
-client.login(process.env.TOKEN)
+client.login(process.env.TOKEN);
