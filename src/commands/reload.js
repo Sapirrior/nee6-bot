@@ -1,6 +1,6 @@
+const config = require('../data/config')
 const fs = require('fs');
 const path = require('path');
-require('dotenv').config();
 
 module.exports = {
   name: 'reload',
@@ -10,7 +10,7 @@ module.exports = {
     const allowedUserId = '1148948261395255398'; // Replace with the actual user ID
 
     if (message.author.id !== allowedUserId) {
-      return message.reply(`${process.env.ERR} **|** You are not allowed to use this command`);
+      return message.reply(`${config.err} **|** You are not allowed to use this command`);
     }
 
     const commandFiles = fs.readdirSync(path.join(__dirname)).filter(file => file.endsWith('.js'));
@@ -21,6 +21,6 @@ module.exports = {
       message.client.commands.set(command.name, command);
     }
 
-    await message.reply(`${process.env.DONE} **|** All commands have been reloaded`);
+    await message.reply(`${config.done} **|** All commands have been reloaded`);
   },
 };

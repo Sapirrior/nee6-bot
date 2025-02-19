@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-require('dotenv').config();
+const config = require('../data/config')
 
 module.exports = {
   name: Events.MessageCreate,
@@ -19,7 +19,7 @@ module.exports = {
         await command.execute(message, args);
       } catch (error) {
         console.log(error);
-        message.channel.send(`${process.env.ERR} **|** Error while executing the command`)
+        message.channel.send(`${config.err} **|** Error while executing the command`)
       };
     };
   },

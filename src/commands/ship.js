@@ -1,12 +1,12 @@
+const config = require('../data/config')
 const { combinename } = require('../utils/shipUtil');
-require('dotenv').config()
 
 module.exports = {
   name: 'ship',
   description: 'Ship command!',
   async execute(message) {
     const mention = message.mentions.users.first()
-    if(!mention) {message.channel.send(`${process.env.ERR} **|** Mention someone`); return;}
+    if(!mention) {message.channel.send(`${config.err} **|** Mention someone`); return;}
     
     const name1 = message.author.displayName || message.member.username;
     const name2 = mention.displayName || mention.username;
