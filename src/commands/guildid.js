@@ -6,6 +6,6 @@ module.exports = {
   async execute(message) {
     
     const id = message.guild.id;
-    message.channel.send(`${config.done} **| Guild ID** ${id}`);
+    message.channel.send(`${config.done} **| Guild ID:** ${id}`);
   },
 };
