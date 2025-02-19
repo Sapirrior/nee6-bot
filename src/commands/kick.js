@@ -20,8 +20,8 @@ module.exports = {
     
     try {
       await targetMember.kick()
-    } catch (err) {
-      message.channel.send(`${config.err} **|** Unable to kick that user`);
+    } catch (error) {
+      return message.channel.send(`${config.err} **|** Unable to kick that user`);
     };
     
     message.channel.send(`${config.done} **|** Kicked That User\n${config.blank} **|** Username: ${target.username}`);
