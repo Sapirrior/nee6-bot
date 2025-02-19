@@ -8,7 +8,7 @@ module.exports = {
     
     const target = message.mentions.users.first();
     const user = message.author;
-    const perm = user.permissions.has(PermissionsBitField.Flags.KickMembers);
+    const perm = message.member.permissions.has(PermissionsBitField.Flags.KickMembers);
     
     if(!target) {message.channel.send(`${config.err} **|** Mention someone`); return;}
     if(!perm) {message.channel.send(`${config.err} **|** You need Kick Members permission`); return;}
