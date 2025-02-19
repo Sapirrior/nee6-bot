@@ -8,7 +8,7 @@ module.exports = {
   .setIntegrationTypes(1)
   .setContexts(0, 1, 2),
   async execute(interaction) {
-    const memes = await axios.get('https://memes-api.com/gimme');
+    const memes = await axios.get('https://meme-api.com/gimme');
     const title = memes.data.title;
     const meme = memes.data.url;
     
