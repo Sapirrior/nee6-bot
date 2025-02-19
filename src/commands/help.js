@@ -1,4 +1,4 @@
-const modCmds = '`userid`';
+const modCmds = '`userid channelid guildid`';
 const utilityCmds = '`help ship prefix meme`';
 
 module.exports = {

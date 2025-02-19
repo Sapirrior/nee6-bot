@@ -7,7 +7,7 @@ module.exports = {
     
     const mention = message.mentions.users.first();
     if(!mention) {
-      message.channel.send(`${config.err} **|** Mention Someone`);
+      message.channel.send(`${config.err} **|** Mention someone`);
       return;
     };
     
