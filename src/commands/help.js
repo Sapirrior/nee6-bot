@@ -1,4 +1,4 @@
-const modCmds = '``';
+const modCmds = '`userid`';
 const utilityCmds = '`help ship prefix meme`';
 
 module.exports = {
