@@ -18,7 +18,12 @@ module.exports = {
     const perm = message.member.permissions.has(PermissionsBitField.Flags.KickMembers);
     if(!perm) {message.channel.send(`${config.err} **|** You dont have permission to use this command`);return;};
     
-    await targetMember.kick().catch(err => {message.channel.send(`${config.err} **|** Unable to kick that user`)});
-    await message.channel.send(`${config.done} **|** Kicked the user\n${config.blank} **|** Username: ${target.username}`);
+    try {
+      await targetMember.kick()
+    } catch (err) {
+      message.channel.send(`${config.err} **|** Unable to kick that user`);
+    };
+    
+    message.channel.send(`${config.done} **|** Kicked That User\n${config.blank} **|** Username: ${target.username}`);
   },
 };
