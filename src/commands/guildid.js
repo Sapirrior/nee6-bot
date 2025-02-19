@@ -1,6 +1,6 @@
 const config = require('../data/config');
 
-mofule.exports = {
+module.exports = {
   name: 'guildid',
   description: 'guilid command',
   async execute(message) {
