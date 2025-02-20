@@ -1,25 +1,21 @@
-const { Client, GatewayIntentBits, Events, SlashCommandBuilder } = require('discord.js');
-const axios = require('axios')
+const { Client, GatewayIntentBits, Events, PermissionsBitField } = require('discord.js');
+const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMessages]});
 require('dotenv').config();
-const client = new Client({intents: GatewayIntentBits.Guilds});
+const url = /(https?:\/\/[^\s]+)/;
 
+// Load Client
 client.once(Events.ClientReady, () => {
-  console.log('Online!');
+  console.log('online!');
 });
 
-client.on(Events.InteractionCreate, async i => {
-  if(!i.isChatInputCommand()) return;
-  if(i.commandName !== 'meme') return;
+// Find Links
+client.on(Events.MessageCreate, async message => {
   
-  const memes = await axios.get('https://meme-api.com/gimme');
-  const meme = memes.data.url;
-  const title = memes.data.title;
-  
-  const embed = {
-    author: {name: title},
-    image: {url: meme}
-  };
-  i.reply({embeds: [embed]});
+  if(message.author.bot) return;
+  if(message.author.id === message.guild.ownerId) return;
+  if(message.member.permissions.has(PermissionsBitField.Flags.Administrator)) return;
+  if(!url.test(message.content)) return;
+  await message.delete().catch(err=> {});
 });
-
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN)
+// AI URL Detection Is Not Available For Public
