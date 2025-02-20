@@ -15,7 +15,7 @@ client.on(Events.MessageCreate, async message => {
   if(message.author.id === message.guild.ownerId) return;
   if(message.member.permissions.has(PermissionsBitField.Flags.Administrator)) return;
   if(!url.test(message.content)) return;
-  await message.delete().catch(err=> {});
+  await message.delete().catch(err=> {console.log(err)});
 });
 client.login(process.env.TOKEN)
 // AI URL Detection Is Not Available For Public
