@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 const connectDB = require('../configs/database');
-const config = require('../configs/config');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
 // Load All Commands
@@ -46,7 +45,7 @@ client.on(Events.MessageCreate, async message => {
             await command.execute(message, args);
         } catch (error) {
             console.error(error);
-            message.reply(`${config.err} **|** Error while executing the command.`);
+            message.reply(`Error while executing the command.`);
         };
     };
 });

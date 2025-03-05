@@ -1,4 +1,3 @@
-const config = require('../../../configs/config');
 const { combine } = require('../utils/shipUtil')
 
 module.exports = {
@@ -10,7 +9,7 @@ module.exports = {
     
     const target = message.mentions.users.first();
     if(!target) {
-      message.reply(`${config.err} Please mention someone!`);
+      message.reply(`Please mention someone!`);
       return;
     }
     
