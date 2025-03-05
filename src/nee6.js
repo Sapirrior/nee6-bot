@@ -19,9 +19,6 @@ for (const file of commandFiles) {
     }
 }
 
-// Connect Database
-connectDB();
-
 // Event Handler
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
