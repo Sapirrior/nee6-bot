@@ -50,3 +50,6 @@ client.on(Events.MessageCreate, async message => {
         };
     };
 });
+
+// Login Bot
+client.login(process.env.TOKEN)
