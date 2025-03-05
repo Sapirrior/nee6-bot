@@ -5,7 +5,7 @@ module.exports = {
   description: 'ship command',
   async execute(message) {
     
-    const name1 = message.member.displayName || message.author.username;
+    const name1 = message.author.username;
     
     const target = message.mentions.users.first();
     if(!target) {
@@ -13,7 +13,7 @@ module.exports = {
       return;
     }
     
-    const name2 = target.member.displayName || target.username;
+    const name2 = target.username;
     const name = combine(name1, name2);
     message.channel.send(`**${name1}** + **${name2}** = **${name}**`);
   },
