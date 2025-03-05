@@ -19,36 +19,22 @@ for (const file of commandFiles) {
     }
 }
 
-// Load Client
-client.once(Events.ClientReady, () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-});
-
 // Connect Database
 connectDB();
 
-// Command Handler
-client.on(Events.MessageCreate, async message => {
-    if (message.author.bot) return;
+// Event Handler
+const eventsPath = path.join(__dirname, 'events');
+const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
-    const guildId = message.guild.id;
-    const prefix = '.';
-
-    if (message.content.startsWith(prefix)) {
-        const args = message.content.slice(prefix.length).trim().split(/ +/);
-        const commandName = args.shift().toLowerCase();
-
-        if (!client.commands.has(commandName)) return;
-
-        const command = client.commands.get(commandName);
-        try {
-            await command.execute(message, args);
-        } catch (error) {
-            console.error(error);
-            message.reply(`Error while executing the command.`);
-        };
-    };
-});
+for (const file of eventFiles) {
+	const filePath = path.join(eventsPath, file);
+	const event = require(filePath);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	} else {
+		client.on(event.name, (...args) => event.execute(...args));
+	}
+}
 
 // Login Bot
 client.login(process.env.TOKEN)
