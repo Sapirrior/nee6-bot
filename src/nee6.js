@@ -32,7 +32,7 @@ client.on(Events.MessageCreate, async message => {
     if (message.author.bot) return;
 
     const guildId = message.guild.id;
-    const prefix = config.prefix || '.';
+    const prefix = '.';
 
     if (message.content.startsWith(prefix)) {
         const args = message.content.slice(prefix.length).trim().split(/ +/);
