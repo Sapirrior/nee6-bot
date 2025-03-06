@@ -29,7 +29,7 @@ module.exports = {
       return;
     };
     
-    const msg = `${settings.warn} **|** <@${user.id}> has been warned\n${settings.warn} **|** **Reason:** ${reason}`;
+    const msg = `${settings.warn} **|** <@${user.id}> has been warned\n${settings.blank} **|** **Reason:** ${reason}`;
     message.channel.send(msg);
   },
 };
