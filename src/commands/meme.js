@@ -6,7 +6,7 @@ module.exports = {
   description: 'meme command',
   async execute(message) {
     
-    const memes = axios.get('https://meme-api.com/gimme').catch(err => {});
+    const memes = await axios.get('https://meme-api.com/gimme').catch(err => {});
     const meme = memes.data.url;
     const title = memes.data.title;
     
