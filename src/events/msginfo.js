@@ -6,7 +6,10 @@ module.exports = {
   async execute(reaction) {
     
     if(reaction.partial) {
-      await reaction.fetch().catch(err => {console.log(err)});
+      await reaction.fetch().catch(err => {
+        console.log(err);
+        return;
+      });
     };
     
     const triggerEmoji = settings.msginfo;
