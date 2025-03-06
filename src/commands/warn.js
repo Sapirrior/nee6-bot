@@ -14,7 +14,7 @@ module.exports = {
     const user = message.mentions.users.first();
     const reason = args.slice(1).join(' ') || 'No reason provided';
     
-    if(!user || args[0] !== user) {
+    if(!user) {
       message.reply(`${settings.err} **|** Please mention a valid user to warn`);
       return;
     };
