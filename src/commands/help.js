@@ -1,5 +1,5 @@
 const settings = require('../configs/settings');
-const moderation = "``````";
+const moderation = "```warn```";
 const utility = "```help ping avatar serverinfo userinfo```";
 const fun = "```ship meme choose```";
 
