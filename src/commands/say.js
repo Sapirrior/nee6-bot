@@ -21,7 +21,6 @@ module.exports = {
       message.reply(`${settings.err} **|** The message is too long`);
       return;
     };
-    await message.channel.send(msg).catch(err => { message.reply(settings.errText) });
-    await message.delete().catch(err => { message.reply(settings.errText) });
+    await message.channel.send(msg);
   },
 };
