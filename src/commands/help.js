@@ -1,6 +1,6 @@
 const settings = require('../configs/settings');
 const moderation = "```warn```";
-const utility = "```help ping avatar serverinfo userinfo```";
+const utility = "```help ping avatar serverinfo userinfo say```";
 const fun = "```ship meme choose```";
 
 module.exports = {
