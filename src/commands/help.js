@@ -1,7 +1,7 @@
 const settings = require('../configs/settings');
 const moderation = "``````";
 const utility = "```help ping avatar```";
-const fun = "```ship```";
+const fun = "```ship meme```";
 
 module.exports = {
   name: 'help',
