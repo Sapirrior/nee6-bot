@@ -12,7 +12,7 @@ module.exports = {
       });
     };
     
-    const triggerEmoji = settings.msginfo;
+    const triggerEmoji = "🚫";
     
     if(reaction.emoji.name !== triggerEmoji) return;
     const message = reaction.message
