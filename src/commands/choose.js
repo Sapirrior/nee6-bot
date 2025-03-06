@@ -18,6 +18,6 @@ module.exports = {
     
     let item = items[Math.floor(Math.random() * items.length)];
 		let msg = ', ' + msgs[Math.floor(Math.random() * msgs.length)].replace('?', '**' + item + '**');
-		message.channel.send(`${settings.err} **|** **${message.author.username}**,  ${msg}`);
+		message.channel.send(`${settings.err} **|** **${message.author.username}**${msg}`);
   },
 };
