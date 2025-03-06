@@ -14,7 +14,7 @@ module.exports = {
     
     const triggerEmoji = "🚫";
     
-    if(reaction.emoji.name !== triggerEmoji) return;
+    if(reaction.emoji !== triggerEmoji) return;
     const message = reaction.message
     
     embed = {
