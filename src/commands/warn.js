@@ -30,6 +30,8 @@ module.exports = {
     };
     
     const msg = `${settings.warn} **|** <@${user.id}> has been warned\n${settings.blank} **|** **Reason:** ${reason}`;
-    message.channel.send(msg);
+    const warning = `${settings.warn} **|** You have been warned in ${message.guild.name}\n${settings.blank} **|** **Reason:** ${reason}`;
+    await message.channel.send(msg);
+    await user.send(warning);
   },
 };
