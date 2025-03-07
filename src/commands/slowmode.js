@@ -31,7 +31,7 @@ module.exports = {
       await message.channel.setRateLimitPerUser(secends);
       message.channel.send(`${settings.tick} **|** **Slowmode:** ${secends}s`)
     } catch (e) {
-      message.reply(`${settings.err} **|** Unable to set slowmode\n> ${e.message}`);
+      message.reply(`${settings.err} **|** Unable to set slowmode\n${settings.blank} **|** ${e.message}`);
     };
   },
 };
