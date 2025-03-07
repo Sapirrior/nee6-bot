@@ -1,11 +1,11 @@
 {
   
   "err": "🚫",
+  "tick": "✅️",
   "guildlink": "https://sapirrior.github.io/Sapirrior",
   "msginfo": "❓️",
   "dick": "🎲",
   "blank": "<:blank:1347171805395157096>",
-  "warn": "️⚠️",
-  "errText": "🚫 **|** Unexpected error occurred"
+  "warn": "️⚠️"
   
 }
