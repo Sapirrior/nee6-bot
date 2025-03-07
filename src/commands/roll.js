@@ -1,7 +1,7 @@
 const settings = require('../configs/settings');
 const message = ['What a lucky day!','What a bad day...','Nice!','Oof','Oh no...','Yikes','Hurray!','Amazing!','Yes!','Oh!','Oh my.','Lucky!','Aw..','Booo..'];
 
-modupe.exports = {
+module.exports = {
   name: 'roll',
   description: 'roll a 6-sided dice',
   async execute(message) {
