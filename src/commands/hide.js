@@ -2,8 +2,8 @@ const settings = require('../configs/settings');
 const { PermissionsBitField } = require('discord.js');
 
 module.exports = {
-  name: 'unlock',
-  description: 'unlock command',
+  name: 'hide',
+  description: 'hide command',
   async execute(message) {
     
     if(!message.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) {
@@ -12,10 +12,10 @@ module.exports = {
     };
     
     try {
-      await message.channel.permissionOverwrites.edit(message.guild.id, { SendMessages: null });
-      await message.channel.send(`${settings.tick} **|** **Unlocked ${message.channel.name}**`);
+      await message.channel.permissionOverwrites.edit(message.guild.id, { ViewChannel: false });
+      await message.channel.send(`${settings.tick} **|** **Hidden ${message.channel.name}**`);
     } catch (e) {
-      await message.reply(`${settings.err} **|** Unable to unlock the channel\n${settings.blank} **|** ${e.message}`);
+      await message.reply(`${settings.err} **|** Unable to hide the channel\n${settings.blank} **|** ${e.message}`);
     };
   },
 };
