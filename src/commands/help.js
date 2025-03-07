@@ -1,5 +1,5 @@
 const settings = require('../configs/settings');
-const moderation = "```warn slowmode lock unlock clear```";
+const moderation = "```warn slowmode lock unlock clear hide unhide```";
 const utility = "```help ping avatar serverinfo userinfo say premium```";
 const fun = "```ship meme choose```";
 
