@@ -12,10 +12,10 @@ module.exports = {
     };
     
     try {
-      message.channel.permissionOverwrites.edit(message.guild.id, { SendMessages: false });
-      message.channel.send(`${settings.tick} **|** **Locked ${message.channel.name}**`);
+      await message.channel.permissionOverwrites.edit(message.guild.id, { SendMessages: false });
+      await message.channel.send(`${settings.tick} **|** **Locked ${message.channel.name}**`);
     } catch (e) {
-      message.reply(`${settings.err} **|** Unable to lock the channel\n${settings.blank} **|** ${e.message}`);
+      await message.reply(`${settings.err} **|** Unable to lock the channel\n${settings.blank} **|** ${e.message}`);
     };
   },
 };
