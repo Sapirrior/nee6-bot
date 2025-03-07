@@ -21,7 +21,7 @@ module.exports = {
     
     const emojiId = emojiMatch[2];
     const animated = emoji.startsWith('<a:');
-    const imageUrl = `https://cdn.discordapp.com/emojis/${emojiId}.${animated ? 'gif' : 'png'}?size=4096`;
+    const imageUrl = `https://cdn.discordapp.com/emojis/${emojiId}.${animated ? 'gif' : 'png'}?size=1024`;
     const embed = { color: 0x7fbbe7, image: { url: imageUrl }};
     message.channel.send({embeds: [embed]});
   },
