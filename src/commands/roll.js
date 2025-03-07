@@ -6,9 +6,9 @@ module.exports = {
   description: 'roll a 6-sided dice',
   async execute(message) {
     
-    const sides = 6;
-    const result = Math.ceil(sides * Math.random());
-    result = `${settings} **|** ${message[Math.trunc(Math.random() * message.length)]} Its a **${result}**!`;
-    await message.channel.send(`${settings.dice} **|** **${message.author.username}** rolls a 6-sided die\n${result}`);
+    const msg = messages[Math.floor(Math.random() * messages.length)];
+    const dice = Math.floor(Math.random() * 6) + 1;
+    const result = `${settings.blank} **|** ${msg} Its a **${dice}**!`;
+    message.channel.send(`${settings.dice} **|** **${message.author.username}** rolls a 6-sided die\n${result}`);
   },
 };
