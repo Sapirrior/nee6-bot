@@ -2,18 +2,21 @@ const settings = require('../configs/settings');
 const { together } = require('../utils/togetherUtil');
 
 module.exports = {
-  name: 'youtube',
-  description: 'youtube command',
+  name: 'together',
+  description: 'Starts a Discord Together YouTube activity.',
   async execute(message) {
-    
-    const choice = 'youtube';
+
     const member = message.member;
-    
-    try {
-      const code = await together(member, choice);
-      await message.channel.send(code);
-    } catch (e) {
-      message.reply(`${settings.err} **|** An error occurred\n${settings.blank} **|** ${e.message}`);
-    };
+    const choice = 'youtube'; // Set the choice to 'youtube'
+
+    const result = await together(member, choice);
+
+    if (result.error) {
+      message.channel.send(result.error);
+    } else if (result.code) {
+      message.channel.send(result.code);
+    } else {
+      message.channel.send(`${settings.err} **|** An unexpected error occurred.`);
+    }
   },
 };
