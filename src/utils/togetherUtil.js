@@ -1,4 +1,4 @@
-function together(member, choice) {
+async function together(member, choice) {
   const settings = require('../configs/settings');
   
   const vc = member.voice.channel?.id;
